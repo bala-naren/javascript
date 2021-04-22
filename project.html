@@ -5,21 +5,81 @@
 </head>
 <body>
 	<h3>Username</h3>
-	<input type="text" id="myText">
+	<input type="text" id="Username" oninput="onclear()">
     <button onclick="myname()">Submit</button>
 
-    <div class="box">
-    	<p>19/4/2021 monday</p>
-    	<h4>Raju : absent</h4>
-    	<h4>Ravi : present</h4>
-    	<h4>Gita : present</h4>
+    <div style="padding: 20px">
+        <div id="welcome_message"></div>
+    	<p id="day"></p>
+        <span>Raju : </span><span id="text1"></span></br>
+        <span>Ravi : </span><span id="text2"></span></br>
+        <span>Gita : </span><span id="text3"></span></br>
     </div>
 
 </body>
 <script>
-    function myname() {
-    var a = document.getElementById("myText").value;
-    alert("welcome " + a);
+  function onclear () {
+        if (document.getElementById("Username").value == '') {
+            document.getElementById("welcome_message").innerHTML = '';
+        }
+    }
+
+    switch (new Date().getDay()) {
+      case 0:
+        document.getElementById("day").innerHTML = "Sunday";
+        document.getElementById("text1").innerHTML = "present";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "present";
+     break;
+     case 1:
+       document.getElementById("day").innerHTML = "Monday";
+        document.getElementById("text1").innerHTML = "absent";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "present";
+       break;
+     case 2:
+       day = "Tuesday";
+       document.getElementById("day").innerHTML = "Tuesday";
+        document.getElementById("text1").innerHTML = "absent";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "present";
+       break;
+     case 3:
+       day = "Wednesday";
+       document.getElementById("day").innerHTML = "Wednesday";
+        document.getElementById("text1").innerHTML = "absent";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "present";
+       break;
+     case 4:
+       day = "Thursday";
+       document.getElementById("day").innerHTML = "Thursday";
+        document.getElementById("text1").innerHTML = "absent";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "present";
+       break;
+     case 5:
+       day = "Friday";
+       document.getElementById("day").innerHTML = "Friday";
+        document.getElementById("text1").innerHTML = "absent";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "absent";
+       break;
+     case  6:
+       day = "Saturday";
+       document.getElementById("day").innerHTML = "Saturday";
+        document.getElementById("text1").innerHTML = "present";
+        document.getElementById("text2").innerHTML = "present";
+        document.getElementById("text3").innerHTML = "present";
+       break;
+}
+   function myname () {
+    let name = document.getElementById("Username").value;
+    if (name == "raju" || name == "ravi" || name == "gita" || name == "Raju" || name == "Ravi" || name == "Gita" || name == "Bala") {
+        document.getElementById("welcome_message").innerHTML = "Welcome " + name;
+    }else {
+        document.getElementById("welcome_message").innerHTML = "Your not allowed";
+    }
 }
 </script>
 </html>

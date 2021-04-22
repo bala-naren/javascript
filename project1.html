@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<textarea id="textarea" style="width: 40%; height: 100px;">Name : M.Bala naren, Age : 14, Studies : 9th, School : Viveka Matric Hr.Sec.School, Village : Chokkanathaputhur, Favourite : Ice-cream</textarea></br></br>
+	<button onclick="loop()">click</button>
+	<button onclick="remove()">Remove</button>
+       <p id="result"></p>
+</body>
+<script>
+	let str = document.getElementById('textarea').value;
+	let array = str.split(",");
+	function loop () {
+	for (i = 0; i < array.length; i++) {
+    document.getElementById("result").innerHTML += array[i] + "<br>";
+      }
+    }
+     function remove (){
+     	document.getElementById("result").innerHTML = " ";
+     }
+
+</script>
+</html>

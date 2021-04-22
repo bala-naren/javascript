@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<input type="text" id="text" oninput="onclear()"></br> </br>
+	<button onclick="lowercase()">Lower Case</button>
+	<button onclick="uppercase()">Upper Case</button>
+
+	<p id="result"></p>
+
+</body>
+<script>
+	function onclear () {
+		if (document.getElementById('text').value == '') {
+			document.getElementById("result").innerHTML = '';
+		}
+	}
+	function lowercase () {
+		let letter = document.getElementById('text').value;
+		if (letter == letter.toLowerCase()) {
+			alert("already in lowercase");
+		} else{
+			document.getElementById("result").innerHTML = letter.toLowerCase()
+		}
+	}
+
+	function uppercase () {
+		let letter = document.getElementById('text').value;
+		if (letter == letter.toUpperCase()) {
+			alert("already in uppercase");
+		} else{
+			document.getElementById("result").innerHTML = letter.toUpperCase()
+		}
+	}
+
+	
+</script>
+</html>
